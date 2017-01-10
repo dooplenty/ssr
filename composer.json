@@ -1,0 +1,13 @@
+{
+    "name": "dooplenty/sync-send-repeat",
+    "description": "Package to sync email from server and provide a ui for conversations",
+    "authors": [
+    {
+        "name": "Dooplenty",
+        "email": "brantley@dooplenty.com"
+    }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+   }
+}
