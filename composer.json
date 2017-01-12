@@ -7,7 +7,6 @@
         "email": "brantley@dooplenty.com"
     }
     ],
-    "minimum-stability": "dev",
     "require": {}
    }
 }
