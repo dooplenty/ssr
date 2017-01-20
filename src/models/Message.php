@@ -9,7 +9,7 @@ class Message extends Model
     protected $table='ssr_messages';
 
     protected $fillable=[
-    	'msgno', 'string_message_id'
+    	'msgno', 'string_message_id', 'uid'
     ];
 
     public function attachments()

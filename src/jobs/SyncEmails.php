@@ -98,6 +98,8 @@ class SyncEmails extends Job implements ShouldQueue
 
         $MessageModel->msgno = $Message->msgId;
         $MessageModel->string_message_id = $Message->string_message_id;
+        $MessageModel->uid = $Message->uid;
+
         $MessageModel->save();
 
         $this->resolveOwnerOfEmail($Message, $MessageModel);

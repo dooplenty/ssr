@@ -16,6 +16,7 @@ class CreateSsrMessagesTable extends Migration
             $table->increments('id');
             $table->integer('msgno');
             $table->string('string_message_id');
+            $table->string('uid');
             $table->timestamps();
         });
     }

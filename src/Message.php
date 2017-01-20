@@ -42,10 +42,14 @@ class Message
 
 	protected $sentDate;
 
+	protected $uid;
+
 	public function __construct(Mailbox $Mailbox, $id)
 	{
 		$this->stream = $Mailbox->getStream();
+
 		$this->msgId = $id;
+		$this->uid = imap_uid($this->stream, $id);
 
 		$this->setHeaderInfo();
 
