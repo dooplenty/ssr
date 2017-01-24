@@ -35,5 +35,9 @@ class SyncSendRepeatServiceProvider extends ServiceProvider
     public function register()
     {
         include __DIR__ . '/routes.php';
+
+        $this->commands(array(
+            \Dooplenty\SyncSendRepeat\Commands\QueueSyncJob::class
+        ));
     }
 }
