@@ -8,6 +8,8 @@ use Illuminate\Console\Command;
 
 class QueueSyncJob extends Command
 {
+	use \Illuminate\Foundation\Bus\DispatchesJobs;
+
 	/**
      * The name and signature of the console command.
      *
