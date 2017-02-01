@@ -94,6 +94,10 @@ class SyncEmails extends Job implements ShouldQueue
     protected function getMessageData(Message $Message)
     {
 
+        if($this->messageExists($Message)) {
+            return false;
+        }
+
         $MessageModel = new MessageModel();
 
         $MessageModel->msgno = $Message->msgId;
@@ -119,6 +123,16 @@ class SyncEmails extends Job implements ShouldQueue
         if (isset($this->messageRelationships[$Message->msgId])) {
             $this->setRelationship($MessageModel->id, $this->messageRelationships[$Message->msgId]);
         }
+    }
+
+    /**
+     * Check if message exists by uid
+     * @param  Message $Message
+     * @return boolean
+     */
+    protected function messageExists(Message $Message)
+    {
+        return MessageModel::where('uid', '=', $Message->uid)->exists();
     }
 
     protected function resolveOwnerOfEmail(Message $Message, MessageModel $MessageModel)
